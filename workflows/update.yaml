@@ -1,0 +1,32 @@
+name: Weekly Update
+
+on:
+  schedule:
+    - cron: '0 1 * * 1'  # 한국 시간 기준으로 매주 월요일 오전 10시에 실행됩니다. UTC 1시입니다.
+
+jobs:
+    weekly_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v3
+
+            - name: Setup Node.js 20.x
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20.x
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: update device info
+              run: npm run crawling
+
+            - name: Create Pull Request
+              uses: peter-evans/create-pull-request@v3
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                branch: main
+                title: Weekly Update
+                body: |
+                  기기정보를 업데이트 합니다.
