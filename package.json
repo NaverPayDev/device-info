@@ -4,7 +4,8 @@
   "description": "Device information",
   "type": "module",
   "scripts": {
-    "crawling": "node src/index.js"
+    "crawling": "node src/index.js",
+    "release": "changeset publish"
   },
   "author": "geonmo-nine",
   "license": "ISC",
