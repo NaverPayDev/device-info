@@ -30,7 +30,7 @@ jobs:
               uses: peter-evans/create-pull-request@v3
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
-                branch: update/$(date +'%Y-%m-%d')
+                branch: update-weekly
                 commit-message: 기기정보를 업데이트 합니다.
                 title: Weekly Update
                 body: |
