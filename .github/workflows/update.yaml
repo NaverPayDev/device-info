@@ -5,10 +5,9 @@ on:
     - cron: '0 1 * * 1'  # 한국 시간 기준으로 매주 월요일 오전 10시에 실행됩니다. UTC 1시입니다.
   workflow_dispatch:
     inputs:
-        actor:
-            description: ''
-            required: false
-            type: string
+      branch:
+        description: '브랜치 이름'
+        required: true
 
 jobs:
     weekly_job:
