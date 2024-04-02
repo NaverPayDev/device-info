@@ -12,5 +12,8 @@
   "dependencies": {
     "node-fetch": "^3.3.2",
     "node-html-parser": "^6.1.12"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }
