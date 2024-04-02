@@ -7,7 +7,7 @@ on:
     inputs:
       branch:
         description: '브랜치 이름'
-        required: true
+        required: false
 
 jobs:
     weekly_job:
@@ -23,8 +23,9 @@ jobs:
 
             - name: Update device info
               run: |
-                npm install
-                npm run crawling
+                npm i -g pnpm
+                pnpm install --frozen-lockfile
+                pnpm crawling
 
             - name: Create Pull Request
               uses: peter-evans/create-pull-request@v3
