@@ -1,5 +1,5 @@
 ---
-"@fake-scope/fake-pkg": major
+"@naverpay/device-info": major
 ---
 
 README.md 작성
