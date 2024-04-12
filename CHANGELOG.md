@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.1
+
+### Patch Changes
+
+- dcef07e: 2024-04-04 기기정보 업데이트
+
 ## 1.0.0
 
 ### Major Changes
