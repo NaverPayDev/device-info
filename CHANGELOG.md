@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.2
+
+### Patch Changes
+
+- 8b76f93: 4/15 Weekly Update
+
 ## 1.0.1
 
 ### Patch Changes
