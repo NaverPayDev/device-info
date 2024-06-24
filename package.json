@@ -7,13 +7,12 @@
     "crawling": "node src/index.js",
     "release": "changeset publish"
   },
-  "author": "geonmo-nine",
+  "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^6.1.12"
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.1"
-  }
+  "packageManager": "pnpm@9.4.0"
 }

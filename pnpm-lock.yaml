@@ -7,17 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
+      '@changesets/cli':
+        specifier: ^2.27.1
+        version: 2.27.1
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
       node-html-parser:
         specifier: ^6.1.12
         version: 6.1.12
-    devDependencies:
-      '@changesets/cli':
-        specifier: ^2.27.1
-        version: 2.27.1
 
 packages:
 
