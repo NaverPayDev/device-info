@@ -4,7 +4,7 @@
   "description": "Device information",
   "type": "module",
   "scripts": {
-    "crawling": "node src/index.js",
+    "crawling": "node src/crawling.js",
     "release": "changeset publish"
   },
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
