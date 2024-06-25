@@ -19,9 +19,8 @@ npm install --save @naverpay/device-info
 ## Usage
 
 ```javascript
-import iOSDeviceInfo from "@naverpay/device-info/ios.json";
-import androidDeviceInfo from "@naverpay/device-info/aos.json";
+import { ios, aos } from "@naverpay/device-info";
 
-console.log(iosDeviceInfo["iPhone15,4"]); // "iPhone 15"
-console.log(androidDeviceInfo["SM-S901B"]); // "Galaxy S22"
+console.log(ios["iPhone15,4"]); // "iPhone 15"
+console.log(aos["SM-S901B"]); // "Galaxy S22"
 ```
