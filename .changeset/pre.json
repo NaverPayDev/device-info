@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@naverpay/device-info": "1.0.6"
+  },
+  "changesets": [
+    "six-days-fix"
+  ]
+}

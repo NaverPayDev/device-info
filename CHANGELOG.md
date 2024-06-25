@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.7-next.0
+
+### Patch Changes
+
+- 59b6927: :bug: 잘못된 의존성을 수정합니다.
+
 ## 1.0.6
 
 ### Patch Changes

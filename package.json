@@ -1,6 +1,6 @@
 {
   "name": "@naverpay/device-info",
-  "version": "1.0.6",
+  "version": "1.0.7-next.0",
   "description": "Device information",
   "type": "module",
   "scripts": {
