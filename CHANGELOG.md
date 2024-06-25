@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.9
+
+### Patch Changes
+
+- 19b1830: 🐛 누락된 타입정보를 추가합니다.
+
 ## 1.0.8
 
 ### Patch Changes
