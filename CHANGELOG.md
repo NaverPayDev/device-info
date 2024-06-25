@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.8
+
+### Patch Changes
+
+- b5252e3: [#20] :sparkles: date 변수 추가로 내보내기
+
 ## 1.0.7
 
 ### Patch Changes
