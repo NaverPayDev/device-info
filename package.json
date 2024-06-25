@@ -7,6 +7,12 @@
     "crawling": "node src/crawling.js",
     "release": "changeset publish"
   },
+  "files": [
+    "index.js",
+    "aos.json",
+    "ios.json",
+    "index.d.ts"
+  ],
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
   "license": "ISC",
   "devDependencies": {
