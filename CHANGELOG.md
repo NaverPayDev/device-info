@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.10
+
+### Patch Changes
+
+- 54bc80c: [#20] 버그 수정
+
 ## 1.0.9
 
 ### Patch Changes
