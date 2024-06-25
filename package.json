@@ -4,16 +4,21 @@
   "description": "Device information",
   "type": "module",
   "scripts": {
-    "crawling": "node src/index.js",
+    "crawling": "node src/crawling.js",
     "release": "changeset publish"
   },
-  "author": "geonmo-nine",
-  "license": "ISC",
-  "dependencies": {
+  "files": [
+    "index.js",
+    "aos.json",
+    "ios.json",
+    "index.d.ts"
+  ],
+  "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^6.1.12"
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.1"
-  }
+  "packageManager": "pnpm@9.4.0"
 }
