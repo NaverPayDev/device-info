@@ -4,7 +4,6 @@
   "description": "Device information",
   "type": "module",
   "scripts": {
-    "postinstall": "node ./hooks/postinstall.js",
     "crawling": "node src/crawling.js",
     "release": "changeset publish"
   },
