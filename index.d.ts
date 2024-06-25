@@ -1,6 +1,15 @@
-declare const DeviceInfo: {
-  ios: Record<string, string>;
-  aos: Record<string, string>;
-  date: string;
-};
-export default DeviceInfo;
+declare module "@naverpay/device-info" {
+  export interface DeviceInfo {
+    [key: string]: string;
+  }
+
+  const iOS: DeviceInfo;
+  const aos: DeviceInfo;
+  const date: string;
+
+  export default {
+    iOS,
+    aos,
+    date,
+  };
+}
