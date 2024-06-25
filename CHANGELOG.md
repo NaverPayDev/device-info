@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.11
+
+### Patch Changes
+
+- 57709f8: ♻️ typescript로 재작성
+
 ## 1.0.10
 
 ### Patch Changes
