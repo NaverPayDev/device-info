@@ -4,6 +4,7 @@
   "description": "Device information",
   "type": "module",
   "scripts": {
+    "postinstall": "node ./hooks/postinstall.js",
     "crawling": "node src/crawling.js",
     "release": "changeset publish"
   },
@@ -11,7 +12,9 @@
     "index.js",
     "aos.json",
     "ios.json",
-    "index.d.ts"
+    "date.js",
+    "index.d.ts",
+    "hooks/*.js"
   ],
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
   "license": "MIT",
