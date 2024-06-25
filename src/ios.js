@@ -1,4 +1,4 @@
-import { writeFile } from "fs";
+import { writeFile } from "fs/promises";
 import fetch from "node-fetch";
 import { parse } from "node-html-parser";
 
@@ -106,11 +106,7 @@ async function fetchDeviceInfoIOS() {
   });
 
   if (record && Object.keys(record).length > 0) {
-    writeFile("./ios.json", JSON.stringify(record), (e) => {
-      if (e) {
-        console.log("[fetch-device-info/ios]", e); // eslint-disable-line no-console
-      }
-    });
+    await writeFile("./ios.json", JSON.stringify(record, null, "\t"));
   }
 }
 
