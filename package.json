@@ -2,25 +2,36 @@
   "name": "@naverpay/device-info",
   "version": "1.0.10",
   "description": "Device information",
-  "type": "module",
   "scripts": {
-    "crawling": "node src/crawling.js",
+    "build": "tsup",
+    "crawling": "node --experimental-modules ./src/crawling.mjs",
     "release": "changeset publish"
   },
   "files": [
-    "index.js",
-    "aos.json",
-    "ios.json",
-    "date.js",
-    "index.d.ts",
-    "hooks/*.js"
+    "./dist"
   ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "node-fetch": "^3.3.2",
-    "node-html-parser": "^6.1.12"
+    "node-html-parser": "^6.1.12",
+    "tsup": "^8.1.0",
+    "typescipt": "^5.5.2"
   },
   "packageManager": "pnpm@9.4.0"
 }

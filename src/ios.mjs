@@ -106,7 +106,7 @@ async function fetchDeviceInfoIOS() {
   });
 
   if (record && Object.keys(record).length > 0) {
-    await writeFile("./ios.json", JSON.stringify(record, null, "\t"));
+    await writeFile("./src/data/ios.json", JSON.stringify(record, null, "\t"));
   }
 }
 

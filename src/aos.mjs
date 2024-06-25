@@ -95,7 +95,7 @@ async function fetchDeviceInfoAOS() {
   });
 
   if (record && Object.keys(record).length > 0) {
-    await writeFile("./aos.json", JSON.stringify(record, null, "\t"));
+    await writeFile("./src/data/aos.json", JSON.stringify(record, null, "\t"));
   }
 }
 
