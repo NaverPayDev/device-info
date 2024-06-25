@@ -14,7 +14,7 @@
     "index.d.ts"
   ],
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "node-fetch": "^3.3.2",
