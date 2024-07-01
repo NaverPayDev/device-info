@@ -1,6 +1,6 @@
 {
   "name": "@naverpay/device-info",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Device information",
   "scripts": {
     "build": "tsup",
