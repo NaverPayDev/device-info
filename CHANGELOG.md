@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.12
+
+### Patch Changes
+
+- d325ed8: Weekly Update
+
 ## 1.0.11
 
 ### Patch Changes
