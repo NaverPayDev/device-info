@@ -32,7 +32,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACTION_TOKEN }}
           branch: update-weekly
           commit-message: 기기정보를 업데이트 합니다.
           title: Weekly Update
