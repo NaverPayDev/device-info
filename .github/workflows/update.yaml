@@ -33,8 +33,10 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.ACTION_TOKEN }}
+          committer: npayfebot <npay.fe.bot@navercorp.com>
+          author: npayfebot <npay.fe.bot@navercorp.com>
           branch: update-weekly
           commit-message: 기기정보를 업데이트 합니다.
-          title: Weekly Update
+          title: Weekly Device Info Update
           body: |
-            기기정보를 업데이트 합니다.
+            ✨ 기기정보를 업데이트 합니다.
