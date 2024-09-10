@@ -1,5 +1,14 @@
 # @naverpay/device-info
 
+## 1.0.13
+
+### Patch Changes
+
+- d45199e: Weekly Device Info Update
+- 001e9a1: Weekly Device Info Update
+- 524c8b0: - 키값을 확인할 수 있는 타입 단언 유틸을 추가합니다.
+  - `minify`를 끕니다.
+
 ## 1.0.12
 
 ### Patch Changes
