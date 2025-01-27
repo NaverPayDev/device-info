@@ -1,3 +1,3 @@
 /*This file was automatically generated. Do not modify it manually.*/
-const date = "2025-01-20T01:28:00.835Z"
+const date = "2025-01-27T01:27:55.366Z"
 export default date;
