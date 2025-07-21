@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.22
+
+### Patch Changes
+
+- fcc007b: Weekly Device Info Update
+
 ## 1.0.21
 
 ### Patch Changes
