@@ -1,5 +1,11 @@
 # @naverpay/device-info
 
+## 1.0.23
+
+### Patch Changes
+
+- 3d14975: Weekly Device Info Update
+
 ## 1.0.22
 
 ### Patch Changes
