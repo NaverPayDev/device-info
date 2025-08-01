@@ -1,34 +1,47 @@
-name: detect changed packages
+name: release packages
 
 on:
-  pull_request:
-    branches: ["**"]
-    types: [opened, reopened, labeled, unlabeled, synchronize]
+  push:
+    branches:
+      - main
 
-concurrency:
-  group: detect-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  detect:
+  release:
+    name: Release
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.ACTION_TOKEN }}
           fetch-depth: 0
-      - name: Enable corepack
-        run: corepack enable
-      - name: Setup pnpm and install dependencies
-        uses: ./tooling/github/setup
-      - name: "detect changed packages"
-        uses: NaverPayDev/changeset-actions/detect-add@main
+
+      - uses: pnpm/action-setup@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Create Release Pull Request
+        id: changesets
+        uses: NaverPayDev/changeset-actions/publish@main
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
-          packages_dir: packages,share
-          skip_label: skip-detect-change
-          skip_branches: main
+          git_username: npayfebot
+          git_email: npay.fe.bot@navercorp.com
+          publish_script: pnpm release
+          pr_title: "🚀 version changed packages"
+          commit_message: "📦 bump changed packages version"
+          create_github_release_tag: true
           formatting_script: pnpm run markdownlint:fix
+          npm_token: ${{ secrets.NPM_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
