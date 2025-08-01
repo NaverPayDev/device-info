@@ -14,16 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+      SKIP_COMMIT_HELPER_POSTINSTALL: 1
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.ACTION_TOKEN }}
           fetch-depth: 0
-      - name: Enable corepack
-        run: corepack enable
-      - name: Setup pnpm and install dependencies
-        uses: ./tooling/github/setup
+
+      - uses: pnpm/action-setup@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
       - name: "detect changed packages"
         uses: NaverPayDev/changeset-actions/detect-add@main
         with:
