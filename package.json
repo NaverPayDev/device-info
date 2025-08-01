@@ -9,7 +9,10 @@
   },
   "sideEffects": false,
   "files": [
-    "./dist"
+    "./dist",
+    "REAMDE.md",
+    "README.ko.md",
+    "CHANGELOG.md"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
