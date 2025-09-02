@@ -1,5 +1,13 @@
 # @naverpay/device-info
 
+## 1.0.24
+
+### Patch Changes
+
+- 5715051: Fixed typo in package.json
+
+  PR: [Fixed typo in package.json](https://github.com/NaverPayDev/device-info/pull/89)
+
 ## 1.0.23
 
 ### Patch Changes
