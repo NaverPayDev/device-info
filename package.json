@@ -10,7 +10,7 @@
   "sideEffects": false,
   "files": [
     "./dist",
-    "REAMDE.md",
+    "README.md",
     "README.ko.md",
     "CHANGELOG.md"
   ],
