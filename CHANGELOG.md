@@ -1,5 +1,13 @@
 # @naverpay/device-info
 
+## 1.0.26
+
+### Patch Changes
+
+- c18fd34: feat: add latest iPhone models to iOS data
+
+  PR: [feat: add latest iPhone models to iOS data](https://github.com/NaverPayDev/device-info/pull/95)
+
 ## 1.0.25
 
 ### Patch Changes
