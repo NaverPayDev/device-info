@@ -29,6 +29,7 @@ jobs:
       - name: Update device info
         run: |
           pnpm install --frozen-lockfile
+          npx playwright install chromium --with-deps
           pnpm crawling
 
       - name: Create Pull Request

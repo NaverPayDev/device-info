@@ -1,5 +1,4 @@
 import { writeFile } from "fs/promises";
-import fetch from "node-fetch";
 import { parse } from "node-html-parser";
 
 const trimText = (text) => text?.replace(/\n|"/gi, " ").trim();
