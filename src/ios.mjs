@@ -1,16 +1,25 @@
 import { writeFile } from "fs/promises";
-import fetch from "node-fetch";
+import { chromium } from "playwright-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import { parse } from "node-html-parser";
 
-/**
- * @see https://github.com/ottocho/ios-devices-table/blob/master/main.py
- * js로 재구현
- */
+chromium.use(StealthPlugin());
+
 const trimText = (text) => text?.replace(/\n|"/gi, " ").trim();
 async function fetchDeviceInfoIOS() {
-  const res = await fetch("https://theapplewiki.com/wiki/Models");
-  const htmlString = await res.text();
-  const document = parse(htmlString);
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+
+  try {
+    await page.goto("https://theapplewiki.com/wiki/Models", {
+      waitUntil: "load",
+      timeout: 60000
+    });
+
+    await page.waitForTimeout(3000);
+
+    const htmlString = await page.content();
+    const document = parse(htmlString);
 
   const all_table_data = {};
   const tables = document.querySelectorAll("table.wikitable");
@@ -18,9 +27,13 @@ async function fetchDeviceInfoIOS() {
   for (const table of tables) {
     const _table_data = [];
 
-    const heading = table.parentNode.previousElementSibling;
-    const brand = heading.childNodes[1]?.id;
-    const wantedBrand = brand.includes("iPhone") || brand.includes("iPad");
+    let parent = table.parentNode;
+    while (parent && !parent.classList?.contains('citizen-section')) {
+      parent = parent.parentNode;
+    }
+    const heading = parent?.previousElementSibling;
+    const brand = heading?.querySelector('.mw-headline')?.id;
+    const wantedBrand = brand?.includes("iPhone") || brand?.includes("iPad");
     if (!wantedBrand) {
       continue;
     }
@@ -93,7 +106,11 @@ async function fetchDeviceInfoIOS() {
       }
       _table_data.push(_row_data);
     }
-    all_table_data[brand] = _table_data;
+    if (all_table_data[brand]) {
+      all_table_data[brand].push(..._table_data);
+    } else {
+      all_table_data[brand] = _table_data;
+    }
   }
 
   const brands = Object.keys(all_table_data);
@@ -105,8 +122,12 @@ async function fetchDeviceInfoIOS() {
     });
   });
 
-  if (record && Object.keys(record).length > 0) {
-    await writeFile("./src/data/ios.json", JSON.stringify(record, null, "\t"));
+    if (record && Object.keys(record).length > 0) {
+      await writeFile("./src/data/ios.json", JSON.stringify(record, null, "\t"));
+      console.log(`✓ Successfully saved ${Object.keys(record).length} device identifiers`);
+    }
+  } finally {
+    await browser.close();
   }
 }
 
