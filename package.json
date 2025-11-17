@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsup",
     "crawling": "node --experimental-modules ./src/crawling.mjs",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "release:canary": "changeset publish --no-git-tag"
   },
   "repository": {
     "type": "git",
