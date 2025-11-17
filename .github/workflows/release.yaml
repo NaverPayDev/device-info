@@ -11,6 +11,10 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write 
+      id-token: write
+      pull-requests: write 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -42,6 +46,7 @@ jobs:
           commit_message: "📦 bump changed packages version"
           create_github_release_tag: true
           formatting_script: pnpm run markdownlint:fix
-          npm_token: ${{ secrets.NPM_TOKEN }}
+          npm_token: ''
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
