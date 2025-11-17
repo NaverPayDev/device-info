@@ -89,7 +89,7 @@ jobs:
 
       - name: Create Release Pull Request
         id: changesets
-        uses: NaverPayDev/changeset-actions/publish@main
+        uses: NaverPayDev/changeset-actions/publish@oidc
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
           git_username: npayfebot
