@@ -1,5 +1,23 @@
 # @naverpay/device-info
 
+## 1.0.28
+
+### Patch Changes
+
+- 8784a3d: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/99)
+
+- 3ae5829: - Improve iOS device crawler with Playwright
+
+  - update IOS Devices
+
+  PR: [Improve iOS device crawler with Playwright](https://github.com/NaverPayDev/device-info/pull/98)
+
+- 2ee487f: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/102)
+
 ## 1.0.27
 
 ### Patch Changes
