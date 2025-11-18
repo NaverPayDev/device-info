@@ -47,6 +47,15 @@ jobs:
         with:
           node-version: "22"
           cache: "pnpm"
+
+      - name: Check and upgrade npm
+        run: |
+            echo "Current npm version:"
+            npm --version
+            npm install -g npm@latest
+            echo "Upgraded npm version:"
+            npm --version
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -55,7 +64,7 @@ jobs:
 
       - name: Publish - Canary
         if: github.event_name == 'issue_comment' && (github.event.comment.body == 'canary-publish' || github.event.comment.body == '/canary-publish')
-        uses: NaverPayDev/changeset-actions/canary-publish@oidc
+        uses: NaverPayDev/changeset-actions/canary-publish@main
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
           npm_tag: canary
@@ -89,7 +98,7 @@ jobs:
 
       - name: Create Release Pull Request
         id: changesets
-        uses: NaverPayDev/changeset-actions/publish@oidc
+        uses: NaverPayDev/changeset-actions/publish@main
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
           git_username: npayfebot
