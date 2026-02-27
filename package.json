@@ -31,6 +31,26 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "./ios": {
+      "import": {
+        "types": "./dist/ios.d.mts",
+        "default": "./dist/ios.mjs"
+      },
+      "require": {
+        "types": "./dist/ios.d.ts",
+        "default": "./dist/ios.js"
+      }
+    },
+    "./aos": {
+      "import": {
+        "types": "./dist/aos.d.mts",
+        "default": "./dist/aos.mjs"
+      },
+      "require": {
+        "types": "./dist/aos.d.ts",
+        "default": "./dist/aos.js"
+      }
     }
   },
   "author": "NaverPay Frontend team <https://github.com/NaverPayDev>",
