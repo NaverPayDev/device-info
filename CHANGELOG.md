@@ -1,5 +1,13 @@
 # @naverpay/device-info
 
+## 1.1.0
+
+### Minor Changes
+
+- 4376c74: support subpath exports
+
+  PR: [subpath exports 지원](https://github.com/NaverPayDev/device-info/pull/109)
+
 ## 1.0.29
 
 ### Patch Changes
