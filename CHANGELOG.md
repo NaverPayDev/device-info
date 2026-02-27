@@ -1,5 +1,25 @@
 # @naverpay/device-info
 
+## 1.0.29
+
+### Patch Changes
+
+- f536dbd: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/106)
+
+- cc927c0: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/108)
+
+- 0a1d855: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/103)
+
+- c5f959d: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/105)
+
 ## 1.0.28
 
 ### Patch Changes
