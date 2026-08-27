@@ -48,13 +48,8 @@ jobs:
           node-version: "22"
           cache: "pnpm"
 
-      - name: Check and upgrade npm
-        run: |
-            echo "Current npm version:"
-            npm --version
-            npm install -g npm@latest
-            echo "Upgraded npm version:"
-            npm --version
+      - name: Upgrade npm for OIDC trusted publishing
+        run: npm install -g npm@11.11.0
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -91,13 +86,8 @@ jobs:
           node-version: "22"
           cache: "pnpm"
 
-      - name: Check and upgrade npm
-        run: |
-            echo "Current npm version:"
-            npm --version
-            npm install -g npm@latest
-            echo "Upgraded npm version:"
-            npm --version
+      - name: Upgrade npm for OIDC trusted publishing
+        run: npm install -g npm@11.11.0
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
