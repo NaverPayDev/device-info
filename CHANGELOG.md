@@ -1,5 +1,13 @@
 # @naverpay/device-info
 
+## 1.2.2
+
+### Patch Changes
+
+- e695324: Weekly Device Info Update
+
+  PR: [Weekly Device Info Update](https://github.com/NaverPayDev/device-info/pull/118)
+
 ## 1.2.1
 
 ### Patch Changes
